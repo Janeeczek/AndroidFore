@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309791373909",
+    "project_id": "androidfore-af9a0",
+    "storage_bucket": "androidfore-af9a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309791373909:android:de6d9309366b734c5df2dc",
+        "android_client_info": {
+          "package_name": "com.example.androidfore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309791373909-kum2egcd35fecv5oi95tnpm1vbijq0vi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy8Xo5WfmdE8CUYdK24vCb3p9H4QMiwiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309791373909-kum2egcd35fecv5oi95tnpm1vbijq0vi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
