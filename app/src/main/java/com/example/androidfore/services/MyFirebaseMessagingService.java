@@ -26,8 +26,6 @@ public class MyFirebaseMessagingService  extends FirebaseMessagingService{
     public void onMessageReceived(RemoteMessage remoteMessage) {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         if (remoteMessage.getData().size() > 0) {
-
-
             if (remoteMessage.getData().containsKey("START")) {
                 if(!isMyServiceRunning(ForeService.class)) {
                     Intent intent = new Intent(getApplicationContext(), ForeService.class);
@@ -44,15 +42,11 @@ public class MyFirebaseMessagingService  extends FirebaseMessagingService{
 
                 handleNow();
             }
-
         }
         if (remoteMessage.getNotification() != null) {
-
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
             //sendNotification(remoteMessage.getNotification().getBody());
         }
-
-
     }
     @Override
     public void onNewToken(String token) {

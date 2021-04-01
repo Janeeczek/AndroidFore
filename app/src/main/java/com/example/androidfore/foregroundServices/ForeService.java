@@ -28,15 +28,7 @@ public class ForeService extends Service {
     public static final String ACTION_STARTED = ForeService.class.getName() + ".STARTED";
     public static final String ACTION_STOP = ForeService.class.getName() + ".STOP";
     public static final String ACTION_IS_STARTED = ForeService.class.getName() + ".ISSTARTED";
-    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive (Context context, Intent intent) {
-            if (intent.getAction().equals(ACTION_IS_STARTED)) {
-                LocalBroadcastManager manager = LocalBroadcastManager.getInstance(getApplicationContext());
-                manager.sendBroadcast(new Intent(ACTION_STARTED));
-            }
-        }
-    };
+
 
     public ForeService() {
     }
@@ -68,10 +60,7 @@ public class ForeService extends Service {
         intents.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intents);
         Toast.makeText(this, "Usługa uruchomiona sukcesem", Toast.LENGTH_LONG).show();
-        LocalBroadcastManager manager = LocalBroadcastManager.getInstance(getApplicationContext());
-        manager.registerReceiver(mReceiver, new IntentFilter(PingableService.ACTION_PONG));
-        // the service will respond to this broadcast only if it's running
-        manager.sendBroadcast(new Intent(ACTION_PING));
+
         return START_STICKY;
     }
 
@@ -83,7 +72,6 @@ public class ForeService extends Service {
     @Override
     public void onDestroy() {
         Toast.makeText(this, "Usługa zakończyła działanie", Toast.LENGTH_SHORT).show();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
     }
 
     private void createNotificationChannel() {
